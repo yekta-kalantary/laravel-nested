@@ -16,7 +16,7 @@ trait Nested
     {
         $fillable = $this->fillable;
         $fillable[] = $this->nestedParentColumn();
-        $this->fillable[] = array_unique($fillable);
+        $this->fillable = array_unique($fillable);
     }
 
     public static function bootNested(): void
