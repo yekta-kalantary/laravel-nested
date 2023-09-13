@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Traits;
+namespace YektaKalantary\LaravelNested\Traits;
 
 
 use Illuminate\Database\Schema\Blueprint;
