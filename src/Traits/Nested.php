@@ -12,7 +12,7 @@ trait Nested
 
     abstract public function nestedParentColumn(): string;
 
-    public function initializeNestedTrait()
+    public function initializeNested()
     {
         $fillable = $this->fillable;
         $fillable[] = $this->nestedParentColumn();
