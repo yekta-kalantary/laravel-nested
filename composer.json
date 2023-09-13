@@ -14,7 +14,8 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "illuminate/support": "v10.23.0"
+        "illuminate/support": "v10.23.0",
+        "illuminate/database": "v10.23.0"
     },
     "extra": {
         "laravel": {

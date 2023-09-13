@@ -49,15 +49,15 @@ trait Nested
 
     private function saveAsNode(): void
     {
-        $max = (new self)->newQuery()
+        $max = $this->newQuery()
             ->where($this->getKeyName(), $this->getAttributeValue($this->nestedParentColumn()))
             ->valueOrFail($this->nestedRightColumn());
 
-        (new self)->newQuery()
+        $this->newQuery()
             ->where($this->nestedLeftColumn(), '>=', $max)
             ->increment($this->nestedLeftColumn(), 2);
 
-        (new self)->newQuery()
+        $this->newQuery()
             ->where($this->nestedRightColumn(), '>=', $max)
             ->increment($this->nestedRightColumn(), 2);
 
@@ -68,7 +68,7 @@ trait Nested
 
     private function saveAsRoot(): void
     {
-        $max = (new self)->newQuery()->max($this->nestedRightColumn());
+        $max = $this->newQuery()->max($this->nestedRightColumn());
         $this->setAttribute($this->nestedLeftColumn(), $max + 1);
         $this->setAttribute($this->nestedRightColumn(), $max + 2);
         $this->saveQuietly();
