@@ -16,6 +16,11 @@ trait Nested
     {
         $fillable = $this->fillable;
         $fillable[] = $this->nestedParentColumn();
+        $fillable = array_unique($fillable);
+        $fillable = array_diff( $fillable, [
+			$this->nestedLeftColumn(),
+			$this->nestedRightColumn(),
+		] ) ;
         $this->fillable = array_unique($fillable);
     }
 
