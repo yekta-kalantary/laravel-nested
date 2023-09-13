@@ -1,0 +1,26 @@
+{
+    "name": "yekta-kalantary/laravel-nested",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "YektaKalantary\\LaravelNested\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yekta Kalantary",
+            "email": "26902978+TheBiGBoSS6000@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "illuminate/support": "v10.23.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "YektaKalantary\\LaravelNested\\Providers\\NestedServiceProvider"
+            ]
+        }
+    }
+}
