@@ -12,6 +12,13 @@ trait Nested
 
     abstract public function nestedParentColumn(): string;
 
+    public function initializeNestedTrait()
+    {
+        $fillable = $this->fillable;
+        $fillable[] = $this->nestedParentColumn();
+        $this->fillable[] = array_unique($fillable);
+    }
+
     public static function bootNested(): void
     {
         self::saving(function (self $model) {
