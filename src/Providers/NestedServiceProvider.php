@@ -4,7 +4,6 @@ namespace YektaKalantary\LaravelNested\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-
 class NestedServiceProvider extends ServiceProvider
 {
     /**

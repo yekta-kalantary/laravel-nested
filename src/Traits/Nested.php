@@ -2,15 +2,15 @@
 
 namespace YektaKalantary\LaravelNested\Traits;
 
-
 use Illuminate\Database\Schema\Blueprint;
 
 trait Nested
 {
-    abstract function getLeftColumn(): string;
+    abstract public function nestedLeftColumn(): string;
 
-    abstract function getRightColumn(): string;
-    abstract function getParentColumn(): string;
+    abstract public function nestedRightColumn(): string;
+
+    abstract public function nestedParentColumn(): string;
 
     public static function bootNested(): void
     {
@@ -26,7 +26,6 @@ trait Nested
             }
         });
     }
-
 
     public static function nestedColumns(Blueprint $table): void
     {
